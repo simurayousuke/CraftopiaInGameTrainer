@@ -44,8 +44,12 @@ Such as:
 * etc.
 
 ## Menu Translation
+"已开启" means "Enabled" while "已关闭" means "Disabled".
 
 ![Menu](https://github.com/simurayousuke/CraftopiaInGameTrainer/blob/master/trainer.png?raw=true)
+
+# Bug report/Suggest
+Use the issue system of github please.
 
 # 使用方法
 1.将Craftopia文件夹内文件解压到游戏根目录
