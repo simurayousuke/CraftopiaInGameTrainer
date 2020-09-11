@@ -24,12 +24,13 @@ namespace CraftopiaInGameTrainer
         //public const string GUID = "52B2D26E-7749-824D-31DD-310AA7D700BA";
         public const string GUID = "cn.zhuangcloud.craftopia.igt";
         public const string NAME = "Craftopia InGame Trainer";
-        public const string VERSION = "1.1";
+        public const string VERSION = "1.2";
         private const string GAME_PROCESS = "Craftopia.exe";
         private const string ANNOUNCEMENT_URL = "http://assets.zhuangcloud.cn/Craftopia/igt/announcement.txt";
         private const string VERSION_URL = "http://assets.zhuangcloud.cn/Craftopia/igt/version.txt";
         private const string LATEST_URL = "http://assets.zhuangcloud.cn/Craftopia/igt/CraftopiaInGameTrainer.dll";
         private const string RELEASE_URL = "https://github.com/simurayousuke/CraftopiaInGameTrainer/releases";
+        private const string GITHUB_URL = "https://github.com/simurayousuke/CraftopiaInGameTrainer";
         #endregion
 
         #region config
@@ -85,6 +86,7 @@ namespace CraftopiaInGameTrainer
         private string latestVersion = VERSION;
         private bool UPDATING = false;
         private bool UPDATE_FAIL = false;
+        private bool IS_NEW = false;
         #endregion
 
         private void InitConfig()
@@ -529,6 +531,26 @@ namespace CraftopiaInGameTrainer
             DrawLong("按一下增加多少钱", MoneyStep);
             DrawLong("按一下增加多少经验", ExpStep);
             DrawInt("按一下增加多少技能点", SkillPointStep);
+
+            DrawCenteredLabel(String.Empty);
+            DrawCenteredLabel("其他");
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("打开主页"))
+                System.Diagnostics.Process.Start(GITHUB_URL);
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("查看公告"))
+                if (CheckAnnounce())
+                    WINDOW_ANNOUNCE = true;
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button(IS_NEW ? "已是最新" : "检查更新"))
+                if (CheckVersion() > Convert.ToDouble(VERSION))
+                    WINDOW_NEW_VERSION = true;
+                else
+                    IS_NEW = true;
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+
             GUILayout.EndVertical();
             GUILayout.EndScrollView();
             //GUILayout.EndArea();
