@@ -1,5 +1,49 @@
-# 已知问题
-无
+# How to use
+1.Download the zip file(_.Craftopia_InGameTrainer_v1.1.zip
+) from the release tag. 
+
+As for latest version:https://github.com/simurayousuke/CraftopiaInGameTrainer/releases/tag/1.1a
+
+2.Follow the video named "2使用教程整合版.mp4".
+
+The file name is in Chinese but it's ok for those who can't speak Chinese.
+
+# Hotkeys & Functions
+## Hotkeys
+Home Show/Hide the Menu
+
+F1	Infinite HP
+
+F2	Infinite MP
+
+F3	Infinite Stamina
+
+F4	Infinite Satiety
+
+F5	Add Money(add 10000 per click as default)
+
+F6	Add Exp(add 10000 per click as default)
+
+F7	Add Skill Point(add 1 per click as default)
+
+## Other Functions
+You can enable/disable other functions in the menu(press HOME to show).
+
+Such as:
+
+* Set max player level to 100.
+
+* Repairing doesn't need money.
+
+* Repair fastly.
+
+* Repairing never fail.
+
+* etc.
+
+## Menu Translation
+
+![avatar](http://assets.zhuangcloud.cn/Craftopia/igt/trainer.png)
 
 # 使用方法
 1.将Craftopia文件夹内文件解压到游戏根目录
