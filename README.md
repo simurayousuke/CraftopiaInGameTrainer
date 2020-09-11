@@ -4,6 +4,8 @@
 
 As for latest version:https://github.com/simurayousuke/CraftopiaInGameTrainer/releases/tag/1.1a
 
+(At bottom )
+
 2.Follow the video named "2使用教程整合版.mp4".
 
 The file name is in Chinese but it's ok for those who can't speak Chinese.
