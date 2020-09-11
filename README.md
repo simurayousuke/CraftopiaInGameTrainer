@@ -43,7 +43,7 @@ Such as:
 
 ## Menu Translation
 
-![avatar](http://assets.zhuangcloud.cn/Craftopia/igt/trainer.png)
+![Menu](https://github.com/simurayousuke/CraftopiaInGameTrainer/blob/master/trainer.png?raw=true)
 
 # 使用方法
 1.将Craftopia文件夹内文件解压到游戏根目录
