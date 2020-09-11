@@ -10,6 +10,8 @@ As for latest version:https://github.com/simurayousuke/CraftopiaInGameTrainer/re
 
 The file name is in Chinese but it's ok for those who can't speak Chinese.
 
+3.Start the game, in the pop up menu click "关闭" and then click "立即更新", the game will restart and then there you go.
+
 # Hotkeys & Functions
 ## Hotkeys
 Home Show/Hide the Menu
