@@ -4,7 +4,7 @@
 
 As for latest version:https://github.com/simurayousuke/CraftopiaInGameTrainer/releases/tag/1.1a
 
-(At bottom )
+(At bottom of this page)
 
 2.Follow the video named "2使用教程整合版.mp4".
 
