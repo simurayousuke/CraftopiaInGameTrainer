@@ -6,7 +6,7 @@ As for latest version:https://github.com/simurayousuke/CraftopiaInGameTrainer/re
 
 (At bottom of this page)
 
-2.Follow the video named "2使用教程整合版.mp4".
+2.Follow the video named "2使用教程整合版.mp4" in the zip file.
 
 The file name is in Chinese but it's ok for those who can't speak Chinese.
 
