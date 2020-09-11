@@ -59,6 +59,14 @@
       <HintPath>F:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationManagerAttributes.cs" />
@@ -67,7 +75,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>set bat="E:\project\c#\CraftopiaInGameTrainer\debug.bat"
+if exist %25bat%25 (
+   %25bat%25
+)</PostBuildEvent>
   </PropertyGroup>
 </Project>
