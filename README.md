@@ -81,13 +81,32 @@ Such as:
 
 * etc.
 
+# 更新历史
+## 1.4
+Add a button to toggle dev console which is built in game.
+
+## 1.3
+Add English support.
+
+## 1.2
+Add buttons.
+
+## 1.1
+1.移除ConfigurationManager软依赖，菜单由自己实现。
+
+2.增加主界面载入后显示公告的功能。
+
+3.加入新版本检测功能。
+
+4.加入自动更新功能。
+
+# Bug report/Suggest
+Use the issue system of github please.
+
 ## Menu Translation
 "已开启" means "Enabled" while "已关闭" means "Disabled".
 
 ![Menu](https://github.com/simurayousuke/CraftopiaInGameTrainer/blob/master/trainer.png?raw=true)
-
-# Bug report/Suggest
-Use the issue system of github please.
 
 # 使用方法
 1.将Craftopia文件夹内文件解压到游戏根目录
@@ -129,16 +148,6 @@ F7	增加技能点（默认一下1点）
 其他功能请在菜单中打开，Enable为开启，Disable为关闭。
 
 （懂配置文件的玩家也可以手动修改配置文件开启）
-
-# 更新历史
-## 1.1
-1.移除ConfigurationManager软依赖，菜单由自己实现。
-
-2.增加主界面载入后显示公告的功能。
-
-3.加入新版本检测功能。
-
-4.加入自动更新功能。
 
 # Bug反馈
 请使用Github的Issue系统汇报Bug，谢谢您的合作。

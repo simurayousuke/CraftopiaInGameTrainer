@@ -24,7 +24,7 @@ namespace CraftopiaInGameTrainer
         //public const string GUID = "52B2D26E-7749-824D-31DD-310AA7D700BA";
         public const string GUID = "cn.zhuangcloud.craftopia.igt";
         public const string NAME = "Craftopia InGame Trainer";
-        public const string VERSION = "1.3";
+        public const string VERSION = "1.4";
         private const string GAME_PROCESS = "Craftopia.exe";
         private const string ANNOUNCEMENT_URL = "http://assets.zhuangcloud.cn/Craftopia/igt/announcement.txt";
         private const string VERSION_URL = "http://assets.zhuangcloud.cn/Craftopia/igt/version.txt";
@@ -87,6 +87,7 @@ namespace CraftopiaInGameTrainer
         private bool UPDATING = false;
         private bool UPDATE_FAIL = false;
         private bool IS_NEW = false;
+        private bool SHOW_SR = false;
         #endregion
 
         private void InitConfig()
@@ -548,6 +549,21 @@ namespace CraftopiaInGameTrainer
                     WINDOW_NEW_VERSION = true;
                 else
                     IS_NEW = true;
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+
+            GUILayout.Label(String.Empty);
+
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("Toggle Dev Console/切换调试控制台"))
+            {
+                SHOW_SR = !SHOW_SR;
+                if (SHOW_SR)
+                    SRDebug.Instance.ShowDebugPanel(false);
+                else
+                    SRDebug.Instance.HideDebugPanel();
+            }
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
 
