@@ -24,7 +24,7 @@ namespace CraftopiaInGameTrainer
         //public const string GUID = "52B2D26E-7749-824D-31DD-310AA7D700BA";
         public const string GUID = "cn.zhuangcloud.craftopia.igt";
         public const string NAME = "Craftopia InGame Trainer";
-        public const string VERSION = "1.2";
+        public const string VERSION = "1.3";
         private const string GAME_PROCESS = "Craftopia.exe";
         private const string ANNOUNCEMENT_URL = "http://assets.zhuangcloud.cn/Craftopia/igt/announcement.txt";
         private const string VERSION_URL = "http://assets.zhuangcloud.cn/Craftopia/igt/version.txt";
@@ -91,35 +91,35 @@ namespace CraftopiaInGameTrainer
 
         private void InitConfig()
         {
-            GodMod = Config.Bind("Functions", "GodMod", false, new ConfigDescription("Switch of god mod.", null, new ConfigurationManagerAttributes { Order = 888, DispName = "无限血" }));
-            InfMana = Config.Bind("Functions", "InfMana", false, new ConfigDescription("Switch of infinite mana.", null, new ConfigurationManagerAttributes { Order = 777, DispName = "无限蓝" }));
-            InfStamina = Config.Bind("Functions", "InfStamina", false, new ConfigDescription("Switch of infinite stamina.", null, new ConfigurationManagerAttributes { Order = 666, DispName = "无限耐力" }));
-            InfSatiety = Config.Bind("Functions", "InfSatiety", false, new ConfigDescription("Switch of infinite satiety.", null, new ConfigurationManagerAttributes { Order = 555, DispName = "永不饥饿" }));
+            GodMod = Config.Bind("Functions", "GodMod", false, new ConfigDescription("Switch of god mod."));
+            InfMana = Config.Bind("Functions", "InfMana", false, new ConfigDescription("Switch of infinite mana."));
+            InfStamina = Config.Bind("Functions", "InfStamina", false, new ConfigDescription("Switch of infinite stamina."));
+            InfSatiety = Config.Bind("Functions", "InfSatiety", false, new ConfigDescription("Switch of infinite satiety."));
 
-            MaxLevelSetTo100 = Config.Bind("Functions", "MaxLevelSetTo100", false, new ConfigDescription("Set max level to 100. Need reload after change this value.", null, new ConfigurationManagerAttributes { Order = 444, DispName = "设置等级上限为100级" }));
+            MaxLevelSetTo100 = Config.Bind("Functions", "MaxLevelSetTo100", false, new ConfigDescription("Set max level to 100. Need reload after change this value."));
             Traverse.Create(typeof(Oc.OcDefine)).Field("MAX_LEVEL").SetValue(MaxLevelSetTo100.Value ? 100 : 50);
-            RepairAlwaysSuccess = Config.Bind("Functions", "RepairAlwaysSuccess", false, new ConfigDescription("Repair always success.", null, new ConfigurationManagerAttributes { Order = 333, DispName = "修理不会失败" }));
+            RepairAlwaysSuccess = Config.Bind("Functions", "RepairAlwaysSuccess", false, new ConfigDescription("Repair always success."));
             Traverse.Create(typeof(Oc.OcDefine)).Field("SUCCESS_RATE_FOR_REPAIR_ITEM").SetValue(RepairAlwaysSuccess.Value ? 1f : 0.9f);
-            RepairIsFree = Config.Bind("Functions", "RepairIsFree", false, new ConfigDescription("Free to repair.", null, new ConfigurationManagerAttributes { Order = 222, DispName = "免费修理" }));
+            RepairIsFree = Config.Bind("Functions", "RepairIsFree", false, new ConfigDescription("Free to repair."));
             Traverse.Create(typeof(Oc.OcDefine)).Field("RAITO_OF_PRICE_TO_REPAIR").SetValue(RepairIsFree.Value ? 0f : 0.1f);
-            RepairIsFast = Config.Bind("Functions", "RepairIsFast", false, new ConfigDescription("Fast repair.", null, new ConfigurationManagerAttributes { Order = 111, DispName = "快速修理" }));
+            RepairIsFast = Config.Bind("Functions", "RepairIsFast", false, new ConfigDescription("Fast repair."));
             Traverse.Create(typeof(Oc.OcDefine)).Field("REPAIR_DURATION_SEC").SetValue(RepairIsFast.Value ? 0.1f : 3f);
 
-            ToggleWindow = Config.Bind("Hotkeys", "ToggleWindow", new KeyboardShortcut(KeyCode.Home), new ConfigDescription("Toggle trainer window show/hide.", null, new ConfigurationManagerAttributes { Order = 888, DispName = "窗口显示/隐藏的快捷键" }));
+            ToggleWindow = Config.Bind("Hotkeys", "ToggleWindow", new KeyboardShortcut(KeyCode.Home), new ConfigDescription("Toggle trainer window show/hide."));
 
-            ToggleGodMod = Config.Bind("Hotkeys", "ToggleGodMod", new KeyboardShortcut(KeyCode.F1), new ConfigDescription("Toggle god mod.", null, new ConfigurationManagerAttributes { Order = 777, DispName = "无限血的快捷键" }));
-            ToggleInfMana = Config.Bind("Hotkeys", "ToggleInfMana", new KeyboardShortcut(KeyCode.F2), new ConfigDescription("Toggle infinite mana.", null, new ConfigurationManagerAttributes { Order = 666, DispName = "无限蓝的快捷键" }));
-            ToggleInfStamina = Config.Bind("Hotkeys", "ToggleInfStamina", new KeyboardShortcut(KeyCode.F3), new ConfigDescription("Toggle infinite stamina.", null, new ConfigurationManagerAttributes { Order = 555, DispName = "无限耐力的快捷键" }));
-            ToggleInfSatiety = Config.Bind("Hotkeys", "ToggleInfSatiety", new KeyboardShortcut(KeyCode.F4), new ConfigDescription("Toggle infinite satiety.", null, new ConfigurationManagerAttributes { Order = 444, DispName = "永不饥饿的快捷键" }));
+            ToggleGodMod = Config.Bind("Hotkeys", "ToggleGodMod", new KeyboardShortcut(KeyCode.F1), new ConfigDescription("Toggle god mod."));
+            ToggleInfMana = Config.Bind("Hotkeys", "ToggleInfMana", new KeyboardShortcut(KeyCode.F2), new ConfigDescription("Toggle infinite mana."));
+            ToggleInfStamina = Config.Bind("Hotkeys", "ToggleInfStamina", new KeyboardShortcut(KeyCode.F3), new ConfigDescription("Toggle infinite stamina."));
+            ToggleInfSatiety = Config.Bind("Hotkeys", "ToggleInfSatiety", new KeyboardShortcut(KeyCode.F4), new ConfigDescription("Toggle infinite satiety."));
 
-            AddMoney = Config.Bind("Hotkeys", "AddMoney", new KeyboardShortcut(KeyCode.F5), new ConfigDescription("Add money.", null, new ConfigurationManagerAttributes { Order = 333, DispName = "加钱快捷键" }));
-            AddExp = Config.Bind("Hotkeys", "AddExp", new KeyboardShortcut(KeyCode.F6), new ConfigDescription("Add exp.", null, new ConfigurationManagerAttributes { Order = 222, DispName = "加经验快捷键" }));
-            AddSkillPoint = Config.Bind("Hotkeys", "AddSkillPoint", new KeyboardShortcut(KeyCode.F7), new ConfigDescription("Add skill point.", null, new ConfigurationManagerAttributes { Order = 111, DispName = "加技能点快捷键" }));
+            AddMoney = Config.Bind("Hotkeys", "AddMoney", new KeyboardShortcut(KeyCode.F5), new ConfigDescription("Add money."));
+            AddExp = Config.Bind("Hotkeys", "AddExp", new KeyboardShortcut(KeyCode.F6), new ConfigDescription("Add exp."));
+            AddSkillPoint = Config.Bind("Hotkeys", "AddSkillPoint", new KeyboardShortcut(KeyCode.F7), new ConfigDescription("Add skill point."));
 
-            MoneyStep = Config.Bind("Misc", "MoneyStep", (long)10000, new ConfigDescription("How many money will be added.", null, new ConfigurationManagerAttributes { IsAdvanced = true, Order = 444, DispName = "按一下加多少钱" }));
-            ExpStep = Config.Bind("Misc", "ExpStep", (long)10000, new ConfigDescription("How many exp will be added.", null, new ConfigurationManagerAttributes { IsAdvanced = true, Order = 333, DispName = "按一下加多少经验" }));
-            SkillPointStep = Config.Bind("Misc", "SkillPointStep", 1, new ConfigDescription("How many skill points will be added.", null, new ConfigurationManagerAttributes { IsAdvanced = true, Order = 222, DispName = "按一下加多少技能点" }));
-            SkillPointStepByLevelUp = Config.Bind("Misc", "SkillPointStepByLevelUp", 1, new ConfigDescription("How many skill points will get when level up. Need reload after change this value.", new AcceptableValueRange<int>(1, 10), new ConfigurationManagerAttributes { Order = 111, DispName = "每升一级获得多少技能点" }));
+            MoneyStep = Config.Bind("Misc", "MoneyStep", (long)10000, new ConfigDescription("How many money will be added."));
+            ExpStep = Config.Bind("Misc", "ExpStep", (long)10000, new ConfigDescription("How many exp will be added."));
+            SkillPointStep = Config.Bind("Misc", "SkillPointStep", 1, new ConfigDescription("How many skill points will be added."));
+            SkillPointStepByLevelUp = Config.Bind("Misc", "SkillPointStepByLevelUp", 1, new ConfigDescription("How many skill points will get when level up. Need reload after change this value."));
             Traverse.Create(typeof(Oc.OcDefine)).Field("INCREASE_SKILLPOINT_BY_LEVEL_UP").SetValue(SkillPointStepByLevelUp.Value);
         }
 
@@ -401,7 +401,7 @@ namespace CraftopiaInGameTrainer
             GUILayout.Label(dispName);
             GUILayout.FlexibleSpace();
             bool boolVal = setting.Value;
-            var result = GUILayout.Toggle(boolVal, boolVal ? "已开启" : "已关闭", GUILayout.ExpandWidth(true), GUILayout.ExpandWidth(true));
+            var result = GUILayout.Toggle(boolVal, boolVal ? "Enabled" : "Disabled", GUILayout.ExpandWidth(true), GUILayout.ExpandWidth(true));
             if (result != boolVal)
                 setting.Value = result;
             GUILayout.EndHorizontal();
@@ -415,7 +415,7 @@ namespace CraftopiaInGameTrainer
 
             if (String.Equals(SETTING_KS_ID, dispName))
             {
-                GUILayout.Label("按下想要设置的快捷键", GUILayout.ExpandWidth(true));
+                GUILayout.Label("Press keys you want to use", GUILayout.ExpandWidth(true));
                 foreach (var key in _keysToCheck)
                     if (Input.GetKeyUp(key))
                     {
@@ -423,18 +423,18 @@ namespace CraftopiaInGameTrainer
                         SETTING_KS_ID = "";
                         break;
                     }
-                if (GUILayout.Button("取消", GUILayout.ExpandWidth(false)))
+                if (GUILayout.Button("Cancle", GUILayout.ExpandWidth(false)))
                     SETTING_KS_ID = "";
             }
             else
             {
                 string key = setting.Value.ToString();
-                if (String.Equals(key, "Not set"))
-                    key = "未设置";
+                //if (String.Equals(key, "Not set"))
+                //    key = "未设置";
                 if (GUILayout.Button(key, GUILayout.ExpandWidth(true)))
                     SETTING_KS_ID = dispName;
 
-                if (GUILayout.Button("清除", GUILayout.ExpandWidth(false)))
+                if (GUILayout.Button("Clear", GUILayout.ExpandWidth(false)))
                 {
                     setting.Value = KeyboardShortcut.Empty;
                     SETTING_KS_ID = "";
@@ -489,61 +489,61 @@ namespace CraftopiaInGameTrainer
             //GUILayout.BeginArea(groupFunctions);
             scrollViewIgtVector = GUILayout.BeginScrollView(scrollViewIgtVector, false, true);
             GUILayout.BeginVertical();
-            DrawCenteredLabel("默认按下Home键可隐藏/显示本窗口");
+            DrawCenteredLabel("By default, press Home to hide/show this menu.");
             DrawCenteredLabel(String.Empty);
 
-            DrawCenteredLabel("功能");
-            DrawBoolField("无限血", GodMod);
-            DrawBoolField("无限蓝", InfMana);
-            DrawBoolField("无限耐力（绿条）", InfStamina);
-            DrawBoolField("永不饥饿", InfSatiety);
-            DrawBoolField("玩家等级上限提升为100级", MaxLevelSetTo100);
-            DrawBoolField("修理不会失败", RepairAlwaysSuccess);
-            DrawBoolField("免费修理", RepairIsFree);
-            DrawBoolField("快速修理", RepairIsFast);
+            DrawCenteredLabel("Functions/功能");
+            DrawBoolField("Inf HP/无限血", GodMod);
+            DrawBoolField("Inf MP/无限蓝", InfMana);
+            DrawBoolField("Inf Stamina/无限耐力（绿条）", InfStamina);
+            DrawBoolField("Inf Satiety/永不饥饿", InfSatiety);
+            DrawBoolField("Set player max level to 100/玩家等级上限提升为100级", MaxLevelSetTo100);
+            DrawBoolField("Repair never fail/修理不会失败", RepairAlwaysSuccess);
+            DrawBoolField("Free repair/免费修理", RepairIsFree);
+            DrawBoolField("Fast repair/快速修理", RepairIsFast);
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button("增加金钱"))
+            if (GUILayout.Button("Add money/增加金钱"))
                 DoAddMoney();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button("增加经验"))
+            if (GUILayout.Button("Add exp/增加经验"))
                 DoAddExp();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button("增加技能点"))
+            if (GUILayout.Button("Add skill point/增加技能点"))
                 DoAddSkillPoint();
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
 
             DrawCenteredLabel(String.Empty);
-            DrawCenteredLabel("快捷键");
-            DrawKeyboardShortcut("显示/隐藏菜单", ToggleWindow);
-            DrawKeyboardShortcut("无限血", ToggleGodMod);
-            DrawKeyboardShortcut("无限蓝", ToggleInfMana);
-            DrawKeyboardShortcut("无限耐力（绿条）", ToggleInfStamina);
-            DrawKeyboardShortcut("永不饥饿", ToggleInfSatiety);
-            DrawKeyboardShortcut("增加金钱", AddMoney);
-            DrawKeyboardShortcut("增加经验", AddExp);
-            DrawKeyboardShortcut("增加技能点", AddSkillPoint);
+            DrawCenteredLabel("Hotkeys/快捷键");
+            DrawKeyboardShortcut("Show/Hide Menu(显示/隐藏菜单)", ToggleWindow);
+            DrawKeyboardShortcut("Inf HP/无限血", ToggleGodMod);
+            DrawKeyboardShortcut("Inf MP/无限蓝", ToggleInfMana);
+            DrawKeyboardShortcut("Inf Stamina/无限耐力（绿条）", ToggleInfStamina);
+            DrawKeyboardShortcut("Inf Satiety/永不饥饿", ToggleInfSatiety);
+            DrawKeyboardShortcut("Add Money/增加金钱", AddMoney);
+            DrawKeyboardShortcut("Add Exp/增加经验", AddExp);
+            DrawKeyboardShortcut("Add Skill Point/增加技能点", AddSkillPoint);
 
             DrawCenteredLabel(String.Empty);
-            DrawCenteredLabel("杂项");
-            DrawInt("每升一级增加多少技能点", SkillPointStepByLevelUp);
-            DrawLong("按一下增加多少钱", MoneyStep);
-            DrawLong("按一下增加多少经验", ExpStep);
-            DrawInt("按一下增加多少技能点", SkillPointStep);
+            DrawCenteredLabel("Misc/杂项");
+            DrawInt("Skill points got per level up/每升一级增加多少技能点", SkillPointStepByLevelUp);
+            DrawLong("Money added per hotkey/按一下增加多少钱", MoneyStep);
+            DrawLong("Exp added per hotkey/按一下增加多少经验", ExpStep);
+            DrawInt("Skill point added per hotkey/按一下增加多少技能点", SkillPointStep);
 
             DrawCenteredLabel(String.Empty);
-            DrawCenteredLabel("其他");
+            DrawCenteredLabel("Other/其他");
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button("打开主页"))
+            if (GUILayout.Button("Open Github/打开主页"))
                 System.Diagnostics.Process.Start(GITHUB_URL);
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button("查看公告"))
+            if (GUILayout.Button("View Announcement/查看公告"))
                 if (CheckAnnounce())
                     WINDOW_ANNOUNCE = true;
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button(IS_NEW ? "已是最新" : "检查更新"))
+            if (GUILayout.Button(IS_NEW ? "Latest/已是最新" : "Check Update/检查更新"))
                 if (CheckVersion() > Convert.ToDouble(VERSION))
                     WINDOW_NEW_VERSION = true;
                 else
@@ -561,10 +561,10 @@ namespace CraftopiaInGameTrainer
             float groupWidth = WINDOW_WIDTH - GROUP_MARGIN_WIDTH * 2f;
             float groupHeight = WINDOW_HEIGHT - GROUP_MARGIN_HEIGHT * 2f - 15f;
             Rect groupAnnounce = new Rect(GROUP_MARGIN_WIDTH, GROUP_MARGIN_HEIGHT + 15f, groupWidth, groupHeight);
-            GUI.Box(groupAnnounce, "公告");
+            GUI.Box(groupAnnounce, "Announcement/公告");
             GUI.BeginGroup(groupAnnounce);
             GUI.Label(groupAnnounce, ANNOUNCEMENT);
-            if (GUI.Button(new Rect((groupWidth - 80f) / 2f, groupHeight - 40f, 80f, 30f), "关闭"))
+            if (GUI.Button(new Rect((groupWidth - 80f) / 2f, groupHeight - 40f, 80f, 30f), "Close/关闭"))
             {
                 WINDOW_ANNOUNCE = false;
                 ToggleWindowDisplay(true);
@@ -576,20 +576,21 @@ namespace CraftopiaInGameTrainer
         {
             if (!UPDATING)
             {
-                string s = "最新版本:" + latestVersion + "\n";
-                s += "当前版本:" + VERSION + "\n\n";
+                string s = "Latest version(最新版本):" + latestVersion + "\n";
+                s += "Current version(当前版本):" + VERSION + "\n\n";
                 s += "是否前往更新？";
+                s += "Do you want to update now?";
 
                 GUILayout.BeginVertical();
                 GUILayout.Label(s);
                 GUILayout.FlexibleSpace();
                 GUILayout.BeginHorizontal();
-                if (GUILayout.Button("查看详情"))
+                if (GUILayout.Button("View detail/查看详情"))
                     System.Diagnostics.Process.Start(RELEASE_URL);
-                if (GUILayout.Button("立即更新"))
+                if (GUILayout.Button("Update/立即更新"))
                     if (!UpdateVersion())
                         UPDATE_FAIL = true;
-                if (GUILayout.Button("下次再说"))
+                if (GUILayout.Button("Not now/下次再说"))
                 {
                     WINDOW_NEW_VERSION = false;
                     ToggleWindowDisplay(true);
@@ -598,9 +599,9 @@ namespace CraftopiaInGameTrainer
                 GUILayout.EndVertical();
             }
             else if (!UPDATE_FAIL)
-                GUILayout.Label("更新中请稍后。更新结束后会自动重启游戏。");
+                GUILayout.Label("Updating... Please wait. Game will restart after update.\n更新中请稍后。更新结束后会自动重启游戏。");
             else
-                GUILayout.Label("更新失败，请尝试手动更新。\n或重启游戏后点击[下次再说]以忽略本次更新。");
+                GUILayout.Label("Fail to update. Try to update manually.\nOr restart game and click 'Not now' to skip.\n更新失败，请尝试手动更新。\n或重启游戏后点击[下次再说]以忽略本次更新。");
         }
     }
 }
