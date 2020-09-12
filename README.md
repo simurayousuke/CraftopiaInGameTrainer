@@ -1,3 +1,39 @@
+# For those who have security concern
+
+Right, this mod will check announcement and new version from my server via announcement.txt and version.txt.
+
+And if there is a new version, you can choose to click the update button(named "立即更新" before v1.3).
+
+This will start downloading the latest mod dll from my server and create a bat file to replace the old one and restart the game client.
+
+The bat file you can find at the UpdateVersion() function.
+
+And I will show it below.
+
+`
+@echo off
+
+taskkill /f /im Craftopia.exe
+
+del /q CraftopiaInGameTrainer.dll
+
+move CraftopiaInGameTrainer.new CraftopiaInGameTrainer.dll
+
+start steam://rungameid/1307550
+
+del %0
+`
+
+As you can see, this bat is safe.
+
+What about the new dll?
+
+You can use dotPeek or dnSpy or whatever to check the code of the new dll. As for open source project, the dll is not encrypted. You can check it easily.
+
+You know how to do it right?
+
+If you still can't believe me, you can choose to skip the update by simply click the button(named "下次再说"  before v1.3).
+
 # How to use
 1.Download the zip file(_.Craftopia_InGameTrainer_v1.1.zip
 ) from the release tag. 
