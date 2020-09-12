@@ -585,9 +585,9 @@ namespace CraftopiaInGameTrainer
                 GUILayout.Label(s);
                 GUILayout.FlexibleSpace();
                 GUILayout.BeginHorizontal();
-                if (GUILayout.Button("View detail/查看详情"))
+                if (GUILayout.Button("Detail/详情"))
                     System.Diagnostics.Process.Start(RELEASE_URL);
-                if (GUILayout.Button("Update/立即更新"))
+                if (GUILayout.Button("Update/更新"))
                     if (!UpdateVersion())
                         UPDATE_FAIL = true;
                 if (GUILayout.Button("Not now/下次再说"))
