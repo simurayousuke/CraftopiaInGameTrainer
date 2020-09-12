@@ -10,19 +10,19 @@ The bat file you can find at the UpdateVersion() function.
 
 And I will show it below.
 
-`
-@echo off
 
-taskkill /f /im Craftopia.exe
+`@echo off`
 
-del /q CraftopiaInGameTrainer.dll
+`taskkill /f /im Craftopia.exe`
 
-move CraftopiaInGameTrainer.new CraftopiaInGameTrainer.dll
+`del /q CraftopiaInGameTrainer.dll`
 
-start steam://rungameid/1307550
+`move CraftopiaInGameTrainer.new CraftopiaInGameTrainer.dll`
 
-del %0
-`
+`start steam://rungameid/1307550`
+
+`del %0`
+
 
 As you can see, this bat is safe.
 
